@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Football by country</string>
+    <string name="start">Start</string>
+    <string name="settings">Settings</string>
+    <string name="sound">Sound</string>
+    <string name="vibrate">Vibration</string>
+    <string name="off">off</string>
+    <string name="on">on</string>
+    <string name="write_the_correct_country">Write the \ncorrect country</string>
+    <string name="check">Check</string>
+    <string name="this_is_a_victory">This is a victory!</string>
+</resources>
