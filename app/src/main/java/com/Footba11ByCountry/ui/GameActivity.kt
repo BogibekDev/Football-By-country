@@ -4,7 +4,9 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
 import android.util.DisplayMetrics
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -35,7 +37,6 @@ class GameActivity : AppCompatActivity() {
         initViews()
     }
 
-
     private fun initViews() {
         adapter = PlayerAdapter(players)
         binding.apply {
@@ -46,6 +47,9 @@ class GameActivity : AppCompatActivity() {
             }
             ivBack.click {
                 finish()
+            }
+            adapter.onVisible = {
+                bCheck.visibility = View.VISIBLE
             }
         }
     }
@@ -69,7 +73,6 @@ class GameActivity : AppCompatActivity() {
 
         if (count == 27) showResult()
     }
-
 
     private fun generatePlayers() {
         players = ArrayList()
@@ -143,6 +146,9 @@ class GameActivity : AppCompatActivity() {
             (width * 0.85).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT
         )
         dialog.show()
+        Handler().postDelayed({
+            dialog.dismiss()
+        }, 4000)
     }
 
 

@@ -13,6 +13,9 @@ import com.Footba11ByCountry.model.Player
 
 class PlayerAdapter(private var list: ArrayList<Player>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    var onVisible: ((Boolean) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return PlayerHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_game, parent, false)
@@ -20,7 +23,7 @@ class PlayerAdapter(private var list: ArrayList<Player>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        var player = list[position]
+        val player = list[position]
         if (holder is PlayerHolder) {
             holder.apply {
                 tvPlayer.text = player.name
@@ -36,9 +39,21 @@ class PlayerAdapter(private var list: ArrayList<Player>) :
                 }
                 etPlayer.addTextChangedListener {
                     list[position].etName = it.toString()
+                    checkList()
                 }
             }
         }
+    }
+
+    private fun checkList() {
+        var filled = true
+        for (i in 1 until list.size) {
+            if (list[i].etName == "") {
+                filled = false
+                break
+            }
+        }
+        if (filled) onVisible?.invoke(true)
     }
 
     override fun getItemCount(): Int {

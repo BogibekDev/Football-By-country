@@ -9,6 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="#FAB50F" />
+
         <TextView
             android:id="@+id/tvPlayer"
 
@@ -20,7 +25,7 @@
             android:gravity="center"
             android:text="Bogibek"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <View
             android:layout_width="4dp"
@@ -38,7 +43,13 @@
             android:fontFamily="@font/ubuntu_medium"
             android:gravity="center"
             android:inputType="text|textNoSuggestions"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="#FAB50F" />
     </LinearLayout>
 
     <View

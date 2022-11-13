@@ -15,7 +15,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingHorizontal="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -24,15 +26,17 @@
                 android:padding="10dp">
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="#40D9D9D9">
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:background="@drawable/icon_back">
 
                     <ImageView
                         android:id="@+id/ivBack"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginRight="16dp"
+                        android:padding="10dp"
                         android:src="@drawable/ic_left" />
                 </LinearLayout>
 
@@ -47,7 +51,7 @@
                     android:maxLines="2"
                     android:text="@string/write_the_correct_country"
                     android:textColor="@color/white"
-                    android:textSize="40sp" />
+                    android:textSize="32sp" />
 
 
             </LinearLayout>
@@ -83,7 +87,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:visibility="gone" />
+                android:visibility="invisible" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
